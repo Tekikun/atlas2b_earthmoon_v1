@@ -1,0 +1,23 @@
+mass of central star in earth masses. (do not remove this line)
+1.0
+PLANETS: a e mass, put one line per planet and a comment line after the last one 
+  60.268	   0.0549     0.0123
+  23454.79   0.0167     333043.1
+  60.268	   0.0549     0.00123
+  60.268	   0.0549     0.000123  
+cccccccccccccccccccccccccccccccccccccccccccccc semimajor axis in Re 6378.137km and mass in earth mass. (do not remove this line)
+
+
+
+
+
+After the comment line you can put your favorite junk, like data from other
+planetary systems
+
+try with Pluto
+39.8     0.25     7.0D-9
+
+
+
+
+

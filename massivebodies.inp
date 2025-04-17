@@ -1,0 +1,15 @@
+mass of central star in earth masses. (do not remove this line)
+1.0
+number of planets.  (do not remove this line)
+2
+semimajor axis in Re 6378.137km and mass in earth mass. (do not remove this line)
+  60.268	     0.0123
+  23454.79     333043.1
+
+
+-------------------------------------------------------------------
+INPUT DATA FILE FOR atlas2bgeneral.for and atlas3bgeneral.for
+
+www.fisica.edu.uy/~gallardo/atlas/
+--------------------------------------------------------------------
+
