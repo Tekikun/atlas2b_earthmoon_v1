@@ -1,13 +1,8 @@
 STAR: mass of the star in solar masses
 1.0
 PLANETS: a e mass (inc=lonper=0)
-  5.2026  4.893E-02 	 9.54791938D-04
-  5.2026  4.893E-02 	 9.54791938D-03
-  5.2026  4.893E-02 	 9.54791938D-02
-  5.2026  4.893E-02 	 5.00000000D-03
-  5.2026  4.893E-02 	 2.00000000D-03
-  5.2026  5.490E-02 	 2.00000000D-03
-  5.2026  5.490E-02 	 1.23000000D-02
+  60.268  5.490E-02 	 1.23000000D-02
+  23454.79   0.0167    333043.1
 TEST PARTICLE:  inclination  argumentper  longnode
 10.0   90.   270.
 TEST PARTICLE: e_ini e_fin delta_e 

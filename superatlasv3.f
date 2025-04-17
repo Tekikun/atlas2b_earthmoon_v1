@@ -1,4 +1,8 @@
-
+C Based on Gallardo's development but need an important unit transfer from heliocentric K_gause to a similar param in geocentric K_gause
+C Heliocentric K_gause's value is given by Gallardo based on the following unit
+C unit mass: Sun's mass; unit distance: 1 AU; unit time: 1 day.
+C Equation is K_gause = sqrt(G*unit_mass) / unit_distance^(1.5) * unit_time
+C ------- by Di
 
 C PROGRAM SUPERATLASv3.F - TABARE GALLARDO, November 2022
 C CALCULATES AN ATLAS OF RESONANCE'S STRENGTHS, WIDTHS, LIBRATIONS...
@@ -23,8 +27,8 @@ C CAN BE CHANGED
       CHARACTER*110 cabezal4
       CHARACTER*48 cabsigma
       character*70 zcomment
-      cabezal1='pla  kp:k    a(au)    e     i     w  ln      <R> '
-      cabezal2='     <R>-R_min  width(au)  sigma_0          periods(yr)'
+      cabezal1='pla  kp:k    a(Re)    e     i     w  ln      <R> '
+      cabezal2='     <R>-R_min  width(Re)  sigma_0          periods(yr)'
       cabezal4=cabezal1//cabezal2
       cabsigma='   sigma = k*lambda - kp*lambda_p + (kp-k)*varpi'
 C INPUT
@@ -230,8 +234,16 @@ C MAX NUMBER OF POINTS IN THE INTEGRAL   = 1000*MAX(KK,KP)
       UNO   = 1.0D0
       PI=TWOPI/2.D0
       G2R=PI/180.D0
-      KGAUS=0.01720209895D0
-      KG2=KGAUS**2
+C G is gravitational constant in (kg, km, s), mass_earth in kg, R_earth in km, DAY in second
+      G = 6.6743E-20
+      MASS_EARTH = 5.9722E24
+      R_EARTH = 6378.137
+      DAY = 86400
+C      KGAUS=0.01720209895D0
+C      KG2=KGAUS**2
+C      Calculate KGAUS value
+      KGAUS = SQRT(G*MASS_EARTH) / R_EARTH**1.5 * DAY
+      KG2 = KGAUS**2
 C MASS OF THE STAR IN SOLAR MASSES
       MST=XM0
 C NUMBER OF RHILL ADMITTED TO CALCULATE DISTURBING FUNCTION

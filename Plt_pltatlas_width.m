@@ -6,7 +6,8 @@ Re = 6378.137; %km
 AU = 149597870.700; %km
 
 % file = 'atlas_pmax10_qmax10.dat';
-file = 'superatlasv3_massmoon_emoon.out';
+% file = 'superatlasv3_massmoon_emoon.out';
+file = 'superatlasv3.out';
 
 % Open the file
 fid = fopen(file,'r');
@@ -76,5 +77,5 @@ xlabel('Semi-major axis (Earth radii)');
 ylabel('Eccentricity')
 
 ylim([0,1])
-xlim([2,5])
+xlim([10,90])
 
