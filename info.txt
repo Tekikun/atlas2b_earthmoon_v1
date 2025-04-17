@@ -1,0 +1,11 @@
+for superatlasv3.out output file, the resonance ratio and semimajor axis leads the secondary body consideration.
+For example,
+pla  kp:k    a(au)    e     i     w  ln      <R>      <R>-R_min  width(au)  sigma_0          periods(yr)      RHTol=   3.0000000000000000     
+ 5    2  1   3.27639 0.000  10.0  90 270  6.0806E-08  7.9989E-10  4.8218E-02 180 999 999 999  2.096E+03  0.000E+00  0.000E+00  0.000E+00
+ 
+Means a resonance ratio of 2:1 happens at 3.27639au. Using Kepler's third law's relation between period (thus ratio) and semimajor axis,
+the secondary body's semimajor axis a_secondary = a * (kp/k)^(2/3), so a_secondary = 5.2009au.
+So this resonance comes from considering Jupiter as the secondary body.
+
+The output file considers only 2body resonance.
+The setup in running the script runs the check for all secondary bodies one by one.

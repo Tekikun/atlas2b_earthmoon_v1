@@ -6,17 +6,23 @@ Re = 6378.137; %km
 AU = 149597870.700; %km
 
 % file = 'atlas_pmax10_qmax10.dat';
-file = 'atlas_inc5.145_mass0.001.dat';
-file = 'atlas_inc5.145_mass0.0001.dat';
+file = 'superatlasv3_massmoon_emoon.out';
 
-opts = detectImportOptions(file, 'NumHeaderLines', 2);  % Skip 2 header lines
-atlas_table = readtable(file, opts);
+% Open the file
+fid = fopen(file,'r');
+% Skip the first two lines of text
+fgetl(fid);  % "I WILL CALCULATE..."
+fgetl(fid);  % "pla  kp:k    a(au)   ..."
+dataCell = textscan(fid, ...
+    '%f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f %f', ...
+    'MultipleDelimsAsOne', true, ...
+    'Delimiter', ' ');% Use textscan to read the remaining lines as 19 floating-point values
+fclose(fid);% Close the file
+
+% Convert the cell array to a numeric matrix (rows × 19 cols)
+atlas_data = cell2mat(dataCell);
 % Define new variable names for the first 11 columns
 newVarNames = {'pla', 'kp', 'k', 'a_Re', 'e', 'i', 'w', 'ln', 'R_avg', 'R_diff', 'width_Re'};
-% Rename only the first 11 columns
-atlas_table.Properties.VariableNames(1:length(newVarNames)) = newVarNames;
-atlas_data = table2array(atlas_table);
-% atlas_data = atlas_data(1:2350,:); % only moon part
 
 %
 % find uniq a in Re
@@ -70,5 +76,5 @@ xlabel('Semi-major axis (Earth radii)');
 ylabel('Eccentricity')
 
 ylim([0,1])
-xlim([5,90])
+xlim([2,5])
 

@@ -19,17 +19,8 @@ C FOR PLOTTING WITH DISLIN  LIBRARIES
       UNO   = 1.0D0
       PI=TWOPI/2.D0
       G2R=PI/180.D0
-C G is gravitational constant in (kg, km, s), mass_earth in kg, R_earth in km, DAY in second
-      G = 6.6743E-20
-      MASS_EARTH = 5.9722E24
-      R_EARTH = 6378.137
-      DAY = 86400
-C      KGAUS=0.01720209895D0
-C      KG2=KGAUS**2
-C     Calculate KGAUS value
-      KGAUS = SQRT(G*MASS_EARTH) / R_EARTH**1.5 * DAY
-      KG2 = KGAUS**2
-      PRINT *, KGAUS
+      KGAUS=0.01720209895D0
+      KG2=KGAUS**2
 
       WRITE(*,*)'------------------------------------------------------'
       WRITE(*,*)'               RESONANCE ANALYZER version 2 '
