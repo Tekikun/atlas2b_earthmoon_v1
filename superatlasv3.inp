@@ -1,4 +1,4 @@
-STAR: mass of the star in solar masses
+STAR: mass of the central body in Earth masses
 1.0
 PLANETS: a e mass (inc=lonper=0)
   60.268  5.490E-02 	 1.23000000D-02
