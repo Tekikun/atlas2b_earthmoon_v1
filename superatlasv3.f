@@ -92,7 +92,7 @@ C MAX ORDER
       WRITE(*,*)'max order q=|kp-k| ?  (less than 50)'
       READ(*,*)IQF
 C LIMITS IN SEMIMAJOR AXIS
-      WRITE(*,*)'interval to be analyzed in au: a_min,a_max?'
+      WRITE(*,*)'interval to be analyzed in Earth radii Re: Re_min,Re_max?'
       WRITE(*,*)'(example: 0.3,25.4)'
       READ(*,*)A2MIN,A2MAX
 C PLANETS TO CONSIDER
